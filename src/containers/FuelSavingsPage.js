@@ -5,33 +5,33 @@ import * as actions from '../actions/fuelSavingsActions';
 import FuelSavingsForm from '../components/FuelSavingsForm';
 
 export const FuelSavingsPage = (props) => {
-  return (
-    <FuelSavingsForm
-      saveFuelSavings={props.actions.saveFuelSavings}
-      calculateFuelSavings={props.actions.calculateFuelSavings}
-      fuelSavings={props.fuelSavings}
-    />
-  );
+	return (
+		<FuelSavingsForm
+			saveFuelSavings={props.actions.saveFuelSavings}
+			calculateFuelSavings={props.actions.calculateFuelSavings}
+			fuelSavings={props.fuelSavings}
+		/>
+	);
 };
 
 FuelSavingsPage.propTypes = {
-  actions: PropTypes.object.isRequired,
-  fuelSavings: PropTypes.object.isRequired
+	actions: PropTypes.object.isRequired,
+	fuelSavings: PropTypes.object.isRequired
 };
 
 function mapStateToProps(state) {
-  return {
-    fuelSavings: state.fuelSavings
-  };
+	return {
+		fuelSavings: state.fuelSavings
+	};
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(actions, dispatch)
-  };
+	return {
+		actions: bindActionCreators(actions, dispatch)
+	};
 }
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(FuelSavingsPage);

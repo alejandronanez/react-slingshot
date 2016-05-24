@@ -6,17 +6,17 @@ import historyApiFallback from 'connect-history-api-fallback';
 
 // Run Browsersync
 browserSync({
-  port: 3000,
-  ui: {
-    port: 3001
-  },
-  server: {
-    baseDir: 'dist'
-  },
+	port: 3000,
+	ui: {
+		port: 3001
+	},
+	server: {
+		baseDir: 'dist'
+	},
 
-  files: [
-    'src/*.html'
-  ],
+	files: [
+		'src/*.html'
+	],
 
-  middleware: [historyApiFallback()]
+	middleware: [historyApiFallback()]
 });

@@ -8,38 +8,38 @@ import FuelSavingsTextInput from './FuelSavingsTextInput';
 chai.use(sinonChai);
 
 describe('<FuelSavingsTextInput />', () => {
-  it('should be an input element', () => {
-    const props = {
-      name: 'testName',
-      onChange: sinon.spy(),
-      placeholder: 'Type Here',
-      value: 100
-    };
+	it('should be an input element', () => {
+		const props = {
+			name: 'testName',
+			onChange: sinon.spy(),
+			placeholder: 'Type Here',
+			value: 100
+		};
 
-    const wrapper = shallow(<FuelSavingsTextInput {...props} />);
+		const wrapper = shallow(<FuelSavingsTextInput {...props} />);
 
-    const actual = wrapper.type();
-    const expected = 'input';
+		const actual = wrapper.type();
+		const expected = 'input';
 
-    expect(actual).to.equal(expected);
-  });
+		expect(actual).to.equal(expected);
+	});
 
-  it('should handle change', () => {
-    const props = {
-      name: 'newMpg',
-      onChange: sinon.spy(),
-      placeholder: 'Type Here',
-      value: 100
-    };
+	it('should handle change', () => {
+		const props = {
+			name: 'newMpg',
+			onChange: sinon.spy(),
+			placeholder: 'Type Here',
+			value: 100
+		};
 
-    const wrapper = shallow(<FuelSavingsTextInput {...props} />);
+		const wrapper = shallow(<FuelSavingsTextInput {...props} />);
 
-    const actual = wrapper.type();
-    const expected = 'input';
+		const actual = wrapper.type();
+		const expected = 'input';
 
-    expect(actual).to.equal(expected);
-    props.onChange.should.not.have.been.called;
-    wrapper.simulate('change', {target: {value: 101}});
-    expect(props.onChange).to.have.been.calledWith('newMpg', 101);
-  });
+		expect(actual).to.equal(expected);
+		props.onChange.should.not.have.been.called;
+		wrapper.simulate('change', {target: {value: 101}});
+		expect(props.onChange).to.have.been.calledWith('newMpg', 101);
+	});
 });
