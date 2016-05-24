@@ -1,7 +1,7 @@
 // This script removes demo app files
 import rimraf from 'rimraf';
 import fs from 'fs';
-import {chalkSuccess} from './chalkConfig';
+import { chalkSuccess } from './chalkConfig';
 
 /* eslint-disable no-console */
 
@@ -21,7 +21,7 @@ const pathsToRemove = [
 
 const filesToCreate = [
 	{
-		path: './src/components/emptyTest.spec.js',
+		path: './src/components/empty-test.test.js',
 		content: '// Must have at least one test file in this directory or Mocha will throw an error.'
 	},
 	{
@@ -48,6 +48,7 @@ function createFile(file) {
 }
 
 let numPathsRemoved = 0;
+/* eslint-disable array-callback-return */
 pathsToRemove.map(path => {
 	removePath(path, () => {
 		numPathsRemoved++;
@@ -57,5 +58,6 @@ pathsToRemove.map(path => {
 		}
 	});
 });
+/* eslint-enable array-callback-return */
 
 console.log(chalkSuccess('Demo app removed.'));

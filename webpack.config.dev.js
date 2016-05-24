@@ -7,6 +7,15 @@ const GLOBALS = {
 };
 
 export default {
+	alias: {
+		actions: 'src/actions',
+		businessLogic: 'src/businessLogic',
+		components: 'src/components',
+		constants: 'src/constants',
+		containers: 'src/containers',
+		reducers: 'src/reducers',
+		store: 'src/store'
+	},
 	debug: true,
 	devtool: 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
 	noInfo: true, // set to false to see a list of every file being bundled.
@@ -27,14 +36,14 @@ export default {
 	],
 	module: {
 		loaders: [
-			{test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
-			{test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file'},
-			{test: /\.(woff|woff2)$/, loader: 'file-loader?prefix=font/&limit=5000'},
-			{test: /\.ttf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream'},
-			{test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=image/svg+xml'},
-			{test: /\.(jpe?g|png|gif)$/i, loaders: ['file']},
-			{test: /\.ico$/, loader: 'file-loader?name=[name].[ext]'},
-			{test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap']}
+			{ test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
+			{ test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file' },
+			{ test: /\.(woff|woff2)$/, loader: 'file-loader?prefix=font/&limit=5000' },
+			{ test: /\.ttf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream' },
+			{ test: /\.svg(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=image/svg+xml' },
+			{ test: /\.(jpe?g|png|gif)$/i, loaders: ['file'] },
+			{ test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
+			{ test: /(\.css|\.scss)$/, loaders: ['style', 'css?sourceMap', 'sass?sourceMap'] }
 		]
 	}
 };

@@ -1,6 +1,6 @@
 {
 	"extends": [
-		"eslint:recommended",
+		"airbnb",
 		"plugin:import/errors",
 		"plugin:import/warnings"
 	],
@@ -23,6 +23,11 @@
 		"mocha": true
 	},
 	"rules": {
+		"max-len": [0],
+		"indent": [2, "tab"],
+		"comma-dangle": [0],
+        "padded-blocks": [0],
+        "import/no-unresolved": [0],
 		"quotes": 0,
 		"no-console": 1,
 		"no-debugger": 1,

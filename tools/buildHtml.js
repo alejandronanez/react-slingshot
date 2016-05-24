@@ -8,7 +8,7 @@
 /* eslint-disable no-console */
 
 import fs from 'fs';
-import {chalkSuccess, chalkError, chalkWarning} from './chalkConfig';
+import { chalkSuccess, chalkError, chalkWarning } from './chalkConfig';
 import cheerio from 'cheerio';
 
 const useTrackJs = true; // If you choose not to use TrackJS, just set this to false and the build warning will go away.
