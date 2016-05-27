@@ -3,7 +3,7 @@
 	"version": "4.0.0",
 	"description": "Starter kit for creating apps with React and Redux",
 	"scripts": {
-		"shrinkdeps": "rm npm-shrinkwrap.json && rm -rf node_shrinkwrap && npm shrinkwrap --dev && shrinkpack",
+		"shrinkdeps": "rm npm-shrinkwrap.json && npm shrinkwrap --dev && shrinkpack",
 		"remove-demo": "babel-node tools/removeDemo.js",
 		"start-message": "babel-node tools/startMessage.js",
 		"prestart": "npm-run-all --parallel start-message remove-dist",
