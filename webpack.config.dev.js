@@ -6,15 +6,13 @@ const GLOBALS = {
 	__DEV__: true
 };
 
+const SOURCE_FOLDER = path.join(__dirname, "src");
+
 export default {
-	alias: {
-		actions: 'src/actions',
-		businessLogic: 'src/businessLogic',
-		components: 'src/components',
-		constants: 'src/constants',
-		containers: 'src/containers',
-		reducers: 'src/reducers',
-		store: 'src/store'
+	resolve: {
+		extensions: ["", ".js", ".jsx", ".scss", ".json"],
+		modulesDirectories: ["node_modules"],
+		root: SOURCE_FOLDER
 	},
 	debug: true,
 	devtool: 'cheap-module-eval-source-map', // more info:https://webpack.github.io/docs/build-performance.html#sourcemaps and https://webpack.github.io/docs/configuration.html#devtool
@@ -36,7 +34,7 @@ export default {
 	],
 	module: {
 		loaders: [
-			{ test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel'] },
+			{ test: /(\.js|\.jsx)$/, exclude: /(node_modules)/, loaders: ['babel'] },
 			{ test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file' },
 			{ test: /\.(woff|woff2)$/, loader: 'file-loader?prefix=font/&limit=5000' },
 			{ test: /\.ttf(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader?limit=10000&mimetype=application/octet-stream' },
